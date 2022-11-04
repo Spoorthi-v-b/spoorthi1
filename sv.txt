@@ -1,0 +1,53 @@
+import java.lang.*;
+class Parent
+{
+	int a,b;
+	void input()
+	{
+		a=10;
+		b=20;
+	}
+	void output()
+	{
+		System.out.println(a);
+		System.out.println(b);
+	}
+}
+class Child1 extends Parent
+{
+	int c;
+	void sum()
+	{
+		c=a+b;
+	}
+	void display()
+	{
+		System.out.println(c);
+	}
+}
+class Child2 extends Child1
+{
+	int d;
+	void diff()
+	{
+		d=a-b;
+	}
+	void show()
+	{
+		System.out.println(d);
+	}
+}
+class TestInheritance
+{
+	public static void main(String arg[])
+	{
+		Child1 c1=new Child1();  //c,sum(),display(),a,b,input(),output()
+		Child2 c2=new Child2();  //d,diff(),show(),c,sum(),display(),a,b,input(),output()
+		c2.input();            //a=10,b=20
+		c2.sum();              //c=a+b=30
+		c2.output();            //10,20
+		c2.display();           //30
+		c2.diff();           //d=a-b
+		c2.show();            //-10
+	}
+}
